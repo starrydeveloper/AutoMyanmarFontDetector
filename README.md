@@ -3,7 +3,7 @@
 
 ### အသံုးျပဳပံု 
 
-`public class MainActivity extends Activity {´
+`**public class MainActivity extends Activity {**`
 
 `public static AutoMyanmarFontDetector mFontDetector;`
 	
