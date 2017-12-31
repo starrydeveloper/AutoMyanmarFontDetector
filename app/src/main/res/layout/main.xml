@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:gravity="center"
+	android:id="@+id/layoutView"
+	android:background="#0F9A1A"
+	android:orientation="vertical">
+
+	<TextView
+		android:layout_height="wrap_content"
+		android:text="Auto Myanmar Font Detector"
+		android:layout_width="wrap_content"
+		android:layout_weight="1.0"
+		android:gravity="center"
+		android:textColor="#FFFFFF"
+		android:textSize="30sp"
+		android:padding="10dp"/>
+
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_weight="15"
+		android:gravity="center"
+		android:padding="10dp"
+		android:textColor="#FFFFFF"
+		android:id="@+id/tv"/>
+
+	<Button
+		android:layout_height="wrap_content"
+		android:text="EXIT"
+		android:layout_width="wrap_content"
+		android:layout_weight="1.0"
+		android:id="@+id/button"
+		android:textColor="#FFFFFF"/>
+
+</LinearLayout>
+
