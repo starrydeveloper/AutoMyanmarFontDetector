@@ -1,4 +1,4 @@
-# Auto Myanmar Font Detector [![Build Status][1]][2] [![Android Weekly][3]][4]
+# Auto Myanmar Font Detector 
 
 Auto Myanmar Font Detector ဟာ Android အက္ပလီေကးရွင္းမ်ား ေရးသားေနသူ Developer မ်ား အတြက္ မိမိ App မွ အသံုးျပဳသူ၏ ဖုန္းတြင္ အသံုးျပဳထားေသာ ျမန္မာစာစနစ္သည္ ေဇာ္ဂ်ီလား ယူနီကုဒ္လား ဆိုသည္ကို အလိုအေလ်ာက္ သိေအာင္ အလုပ္လုပ္ေပးေသာ class တစ္ခု ျဖစ္ပါသည္။
 

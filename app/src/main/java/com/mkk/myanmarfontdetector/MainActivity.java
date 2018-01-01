@@ -33,15 +33,15 @@ public class MainActivity extends Activity
 	private void loop() {
 		
 		new Handler().postDelayed((Runnable ) new Runnable() {
-									  @Override
-									  public void run() {
-										  if(countDown > 0) {
-											  countDown();
-										  } else {
-											  showResult();
-										  }
-									  }
-								  }, 700); 
+						@Override
+						public void run() {
+							if(countDown > 0) {
+								countDown();
+							} else {
+								showResult();
+							}
+						}
+				}, 700); 
 		countDown--;
 		
 	}
