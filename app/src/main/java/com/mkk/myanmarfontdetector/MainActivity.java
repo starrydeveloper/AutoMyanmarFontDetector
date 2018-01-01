@@ -26,11 +26,11 @@ public class MainActivity extends Activity
 		
 		mFontDetector = new AutoMyanmarFontDetector(this,layout);
 		
-		delay();
+		loop();
 		
     }
 	
-	private void delay() {
+	private void loop() {
 		
 		new Handler().postDelayed((Runnable ) new Runnable() {
 									  @Override
@@ -49,12 +49,12 @@ public class MainActivity extends Activity
 	private void showResult() {
 		tv.setTextSize(14);
 		tv.setBackgroundColor(Color.argb(250,50,100,200));
-		tv.setText(mFontDetector.fromUnicode("မင်္ဂလာပါ ...\n\nသင်၏ ဖုန်းသည် ဇော်ဂျီကို အသုံးပြုသည် ဖြစ်စေ၊ ယူနီကုဒ်ကို အသုံးပြုသည် ဖြစ်စေ၊ ဤ စာသားများကို စာလုံး မှန်မှန်ဖြင့် ဖတ်လို့ ရနေရပါမည်။\n\nDeveloped By MKK ®"));
-		button.setText(mFontDetector.fromUnicode("ပိတ်ရန်"));
+		tv.setText(mFontDetector.writeUnicode("မင်္ဂလာပါ ...\n\nသင်၏ ဖုန်းသည် ဇော်ဂျီကို အသုံးပြုသည် ဖြစ်စေ၊ ယူနီကုဒ်ကို အသုံးပြုသည် ဖြစ်စေ၊ ဤ စာသားများကို စာလုံး မှန်မှန်ဖြင့် ဖတ်လို့ ရနေရပါမည်။\n\nDeveloped By MKK ®"));
+		button.setText(mFontDetector.writeUnicode("ပိတ်ရန်"));
 	}
 	private void countDown() {
 		tv.setTextSize(100);
 		tv.setText(countDown + "");
-		delay();
+		loop();
 	}
 }

@@ -1,3 +1,11 @@
+
+/*
+ * Copyright 2018 Myo Ko
+ *
+ * Any questions to starrydeveloper@gmail.com
+ *
+ */
+ 
 package com.mkk.myanmarfontdetector;
 
 import android.content.*;
@@ -7,7 +15,6 @@ import org.json.*;
 import javax.security.auth.*;
 import android.view.Display.*;
 
-// Developed By Myo Ko Ko, 1/1/2018
 
 public class AutoMyanmarFontDetector {
 	
@@ -37,13 +44,13 @@ public class AutoMyanmarFontDetector {
 			case "z" : 
 				isZawGyi = true;
 				if(debugging) {
-					Toast.makeText(mContext,fromZawgyi("စစ္ျပီးသား ျဖစ္ပါသည္။ ေဇာ္ဂ်ီပါ။"),Toast.LENGTH_SHORT).show();
+					Toast.makeText(mContext,writeZawgyi("စစ္ျပီးသား ျဖစ္ပါသည္။ ေဇာ္ဂ်ီပါ။"),Toast.LENGTH_SHORT).show();
 				}
 			break;
 			case "u" : 
 				isZawGyi = false;
 				if(debugging) {
-					Toast.makeText(mContext,fromZawgyi("စစ္ျပီးသား ျဖစ္ပါသည္။ ယူနီကုဒ္ပါ။"),Toast.LENGTH_SHORT).show();
+					Toast.makeText(mContext,writeZawgyi("စစ္ျပီးသား ျဖစ္ပါသည္။ ယူနီကုဒ္ပါ။"),Toast.LENGTH_SHORT).show();
 				}
 			break;
 			default : break;
@@ -74,13 +81,13 @@ public class AutoMyanmarFontDetector {
 			editor.putString(FONT_KEY,"z");
 			isZawGyi = true;
 			if(debugging) {
-				Toast.makeText(mContext,fromZawgyi("ဤဖုန္းသည္ ေဇာ္ဂ်ီကို အသံုးျပဳထား ပါသည္။"), Toast.LENGTH_LONG).show();
+				Toast.makeText(mContext,writeZawgyi("ဤဖုန္းသည္ ေဇာ္ဂ်ီကို အသံုးျပဳထား ပါသည္။"), Toast.LENGTH_LONG).show();
 			}
 		} else {
 			editor.putString(FONT_KEY,"u");
 			isZawGyi = false;
 			if(debugging) {
-				Toast.makeText(mContext, fromZawgyi("ဤဖုန္းသည္ ယူနီကုဒ္ကို အသံုးျပဳထား ပါသည္။"), Toast.LENGTH_LONG).show();
+				Toast.makeText(mContext, writeZawgyi("ဤဖုန္းသည္ ယူနီကုဒ္ကို အသံုးျပဳထား ပါသည္။"), Toast.LENGTH_LONG).show();
 			}
 		}
 		editor.commit();
@@ -134,25 +141,25 @@ public class AutoMyanmarFontDetector {
         return replace.replace("\uffff\uffff", "").trim();
     }
 	
-	private String correctTextFromDefaultZawgyiInput(String zawgyiText) {
-		if(!isZawGyi) {
-			return zawgyiToUnicode(zawgyiText);
+	private String correctTextFromZawgyiInput(String zawgyiText) {
+		if(isZawGyi) {
+			return zawgyiText;
 		}
-		return zawgyiText;
+		return zawgyiToUnicode(zawgyiText);
 	}
-	private String correctTextFromDefaultUnicodeInput(String unicodeText) {
+	private String correctTextFromUnicodeInput(String unicodeText) {
 		if(!isZawGyi) {
 			return unicodeText;
 		}
 		return unicodeToZawgyi(unicodeText);
 	}
 	
-	public String fromZawgyi(String zawgyiText) {
-		return correctTextFromDefaultZawgyiInput(zawgyiText);
+	public String writeZawgyi(String zawgyiText) {
+		return correctTextFromZawgyiInput(zawgyiText);
 	}
 	
-	public String fromUnicode(String unicodeText) {
-		return correctTextFromDefaultUnicodeInput(unicodeText);
+	public String writeUnicode(String unicodeText) {
+		return correctTextFromUnicodeInput(unicodeText);
 	}
 	
 } //Main
